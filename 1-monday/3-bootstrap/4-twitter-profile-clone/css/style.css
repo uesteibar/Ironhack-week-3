@@ -6,3 +6,9 @@
 .tweet-list li {
   border-bottom: 0.1em solid black;
 }
+
+.avatar {
+  position: absolute;
+  width: 70%;
+  margin-top: -14em;
+}
