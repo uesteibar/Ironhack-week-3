@@ -1,0 +1,72 @@
+
+body {
+  background-color: #E1E3E5;
+  padding: 3em;
+}
+
+.card {
+  position: relative;
+  padding: 1em;
+  margin: 1%;
+  float: left;
+  background-color: white;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.2em 0.3em #888888;
+}
+
+.card__title {
+  font-size: 1.5em;
+  color: #4A4A4A;
+}
+
+.card p {
+  color: #9B9B9B;
+}
+
+.button {
+  font-size: 0.9em;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  padding: 0.7em 1em;
+  border: 0.1em solid;
+  border-radius: 0.2em;
+  border-color: currentColor;
+}
+
+.button.button--good {
+  background-color: #EBFFD3;
+  color: #7FA84E;
+}
+
+.button.button--good:hover {
+  background-color: #C3E29E;
+}
+
+.button.button--bad {
+  background-color: #FFD3D3;
+  color: #A84E4E;
+}
+
+.button.button--bad:hover {
+  background-color: #E29E9E;
+}
+
+@media (min-width: 480px) {
+  .card {
+    width: 48%;
+    float: left;
+  }
+}
+
+@media (min-width: 960px) {
+  .card {
+    width: 30%;
+  }
+
+  .button {
+    display: inline;
+    width: auto;
+    margin-top: 0;
+  }
+}
