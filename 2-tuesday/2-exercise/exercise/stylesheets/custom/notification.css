@@ -1,23 +1,33 @@
 /*
-Error: Undefined variable: "$color_secondary".
-        on line 5 of /Users/uesteibar/Documents/DevelopmentProyects/ironhack/week-3/2-tuesday/2-exercise/exercise/sass/custom/notification.scss
+Error: Undefined variable: "$color_dark".
+        on line 6 of /Users/uesteibar/Documents/DevelopmentProyects/ironhack/week-3/2-tuesday/2-exercise/exercise/sass/custom/notification.scss
 
 1: .notification {
 2:   .notification-body {
 3:     position   : relative;
 4:     padding-top: 1.2rem;
-5:     color      : $color_secondary;
-6:     a {
-7:       color: $color_primary;
-8:       &:hover {
-9:         text-decoration: none;
-10:         color          : lighten($color_primary, 20%);
+5:     > h4 {
+6:       color: $color_dark;
+7:     }
+8:   }
+9: }
 
 Backtrace:
-/Users/uesteibar/Documents/DevelopmentProyects/ironhack/week-3/2-tuesday/2-exercise/exercise/sass/custom/notification.scss:5
+/Users/uesteibar/Documents/DevelopmentProyects/ironhack/week-3/2-tuesday/2-exercise/exercise/sass/custom/notification.scss:6
 /Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
 /Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/uesteibar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
@@ -80,4 +90,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color_secondary\".\A         on line 5 of /Users/uesteibar/Documents/DevelopmentProyects/ironhack/week-3/2-tuesday/2-exercise/exercise/sass/custom/notification.scss\A \A 1: .notification {\A 2:   .notification-body {\A 3:     position   : relative;\A 4:     padding-top: 1.2rem;\A 5:     color      : $color_secondary;\A 6:     a {\A 7:       color: $color_primary;\A 8:       &:hover {\A 9:         text-decoration: none;\A 10:         color          : lighten($color_primary, 20%);"; }
+  content: "Error: Undefined variable: \"$color_dark\".\A         on line 6 of /Users/uesteibar/Documents/DevelopmentProyects/ironhack/week-3/2-tuesday/2-exercise/exercise/sass/custom/notification.scss\A \A 1: .notification {\A 2:   .notification-body {\A 3:     position   : relative;\A 4:     padding-top: 1.2rem;\A 5:     > h4 {\A 6:       color: $color_dark;\A 7:     }\A 8:   }\A 9: }"; }

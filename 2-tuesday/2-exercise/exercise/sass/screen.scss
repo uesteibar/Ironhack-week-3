@@ -12,7 +12,6 @@
 @import "custom/avatar";
 @import "custom/card";
 @import "custom/notification";
-@import "custom/comment";
 @import "custom/buttons";
 @import "custom/labels";
 
@@ -23,4 +22,20 @@ body {
 .container {
   background-color: $color_background;
   padding-top: 3rem;
+}
+
+.text-secondary {
+  color: $color_secondary;
+  a {
+    color: $color_primary;
+    &:hover {
+      text-decoration: none;
+      color          : lighten($color_primary, 20%);
+      transition     : color 1s;
+    }
+  }
+}
+
+.icon-red {
+  color: red;
 }

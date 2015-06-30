@@ -8891,19 +8891,8 @@ button.close {
 .notification .notification-body {
   position: relative;
   padding-top: 1.2rem;
-  color: #aaa;
 }
-/* line 6, ../sass/custom/notification.scss */
-.notification .notification-body a {
-  color: #2889d8;
-}
-/* line 8, ../sass/custom/notification.scss */
-.notification .notification-body a:hover {
-  text-decoration: none;
-  color: #7eb8e8;
-  transition: color 1s;
-}
-/* line 14, ../sass/custom/notification.scss */
+/* line 5, ../sass/custom/notification.scss */
 .notification .notification-body > h4 {
   color: #222;
 }
@@ -8987,13 +8976,33 @@ button.close {
   font-size: 1.7rem;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 body {
   font-family: "Roboto";
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 .container {
   background-color: #f5f5f5;
   padding-top: 3rem;
+}
+
+/* line 27, ../sass/screen.scss */
+.text-secondary {
+  color: #aaa;
+}
+/* line 29, ../sass/screen.scss */
+.text-secondary a {
+  color: #2889d8;
+}
+/* line 31, ../sass/screen.scss */
+.text-secondary a:hover {
+  text-decoration: none;
+  color: #7eb8e8;
+  transition: color 1s;
+}
+
+/* line 39, ../sass/screen.scss */
+.icon-red {
+  color: red;
 }
