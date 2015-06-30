@@ -8880,13 +8880,20 @@ button.close {
 .card > .card-heading {
   border-bottom: 1px solid #f5f5f5;
 }
-/* line 8, ../sass/custom/card.scss */
+/* line 7, ../sass/custom/card.scss */
 .card > .card-footer {
   background-color: white;
   border: none;
   padding-bottom: 3rem;
 }
 
+/* .update {
+  @media ($viewport_desktop) {
+    width: 48%;
+    padding: 1%;
+    float: left;
+  }
+} */
 /* line 2, ../sass/custom/notification.scss */
 .notification .notification-body {
   position: relative;

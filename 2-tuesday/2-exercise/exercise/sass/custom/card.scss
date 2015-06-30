@@ -4,10 +4,17 @@
   > .card-heading {
     border-bottom: 1px solid $color_background;
   }
-
   > .card-footer {
     background-color: white;
-    border: none;
-    padding-bottom: 3rem;
+    border          : none;
+    padding-bottom  : 3rem;
   }
 }
+
+/* .update {
+  @media ($viewport_desktop) {
+    width: 48%;
+    padding: 1%;
+    float: left;
+  }
+} */
