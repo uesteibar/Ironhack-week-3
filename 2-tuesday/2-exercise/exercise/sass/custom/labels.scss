@@ -1,0 +1,23 @@
+
+@mixin label($text_color: $color_secondary) {
+  padding: 0.1em 0.5em;
+  background-color: white;
+  border: 1px solid $color_secondary;
+  border-radius: 0.2em;
+  color: $text_color;
+  font-size: 1.3rem
+}
+
+$labels: secondary $color_secondary, primary $color_primary, danger $color_danger;
+
+@each $label in $labels {
+  .label-#{nth($label, 1)} {
+    @include label(nth($label, 2));
+  }
+}
+
+.label-likes {
+  @include label($color_likes);
+  border: none;
+  font-size: 1.7rem;
+}

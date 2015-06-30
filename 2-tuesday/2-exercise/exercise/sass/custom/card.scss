@@ -1,0 +1,13 @@
+
+.card {
+  margin: 1rem;
+  > .card-heading {
+    border-bottom: 1px solid $color_background;
+  }
+
+  > .card-footer {
+    background-color: white;
+    border: none;
+    padding-bottom: 3rem;
+  }
+}

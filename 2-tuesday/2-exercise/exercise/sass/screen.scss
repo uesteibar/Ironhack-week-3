@@ -1,0 +1,26 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@import "bootstrap";
+
+// @import "custom/fonts";
+@import "custom/variables";
+@import "custom/avatar";
+@import "custom/card";
+@import "custom/notification";
+@import "custom/comment";
+@import "custom/buttons";
+@import "custom/labels";
+
+body {
+  font-family: $font_roboto;
+}
+
+.container {
+  background-color: $color_background;
+  padding-top: 3rem;
+}

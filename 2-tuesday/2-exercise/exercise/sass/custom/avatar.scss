@@ -1,0 +1,26 @@
+
+@mixin avatar($size) {
+  height: $size;
+  width: $size;
+  background-color: $color_dark;
+  &:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+}
+
+.avatar-small {
+  @include avatar(5rem);
+}
+
+.avatar-tiny {
+  @include avatar(3rem);
+}
+
+.avatar-rounded {
+  border-radius: 0.5rem;
+}
+
+.avatar-circled {
+  border-radius: 50%;
+}
