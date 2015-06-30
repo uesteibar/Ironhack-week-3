@@ -1,0 +1,31 @@
+
+// button base
+@mixin button($color: $primary_color, $text_color: darken($color, 30%)) {
+  padding: 1em;
+  border: pxr(3) solid $color;
+  color: $text_color;
+  background: lighten($color, 30%);
+  border-radius: pxr(8);
+
+  &:hover {
+    text-decoration: none;
+    color: $text_color;
+    background-color: lighten($color, 40%);
+    transition: background-color 0.5s;
+  }
+}
+
+$buttons: primary $primary_color, secondary $secondary_color, alternative $alternative_color;
+
+@each $button in $buttons {
+  .button-#{nth($button, 1)} {
+    @if nth($button, 2) == black {
+      $text_color: white;
+    }
+    @include button(nth($button, 2), $text_color);
+  }
+}
+
+.button-rounded {
+  border-radius: pxr(50);
+}
