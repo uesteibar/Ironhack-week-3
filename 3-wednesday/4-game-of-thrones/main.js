@@ -1,4 +1,7 @@
 
 var episodeHandler = require('./episode-handler');
 
-episodeHandler.print_top();
+episodeHandler.print();
+episodeHandler.printSorted();
+episodeHandler.printTop();
+episodeHandler.findJonSnow();
