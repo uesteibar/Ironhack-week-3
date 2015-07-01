@@ -1,7 +1,8 @@
 
 var episodeHandler = require('./episode-handler');
+var episodeActions = require('./episode-actions');
 
-episodeHandler.print();
-episodeHandler.printSorted();
-episodeHandler.printTop();
-episodeHandler.findJonSnow();
+episodeHandler(episodeActions.print);
+episodeHandler(episodeActions.printSorted);
+episodeHandler(episodeActions.printTop);
+episodeHandler(episodeActions.findJonSnow);
