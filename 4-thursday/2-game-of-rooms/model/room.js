@@ -4,9 +4,10 @@ var Room = function(roomConfig) {
   this.hint = roomConfig.hint;
   this.exits = roomConfig.exits;
   this.actions = roomConfig.actions;
+  this.inventory = roomConfig.inventory;
 };
 
-Room.prototype.checkInput = function(input) {
+Room.prototype.checkInput = function(input, user) {
   var nextDirection = this.checkDirection(input);
   if (nextDirection) {
     return this.direction(nextDirection);
@@ -15,6 +16,16 @@ Room.prototype.checkInput = function(input) {
   var action = this.checkAction(input);
   if (action) {
     console.log(action);
+    return null;
+  }
+
+  if (input.substring(0, 7).toLowerCase() === 'pick up') {
+    this.giveObject(user, input.substring(8, input.length));
+    return null;
+  }
+
+  if (input.substring(0, 4).toLowerCase() === 'drop') {
+    user.drop(input.substring(5, input.length));
     return null;
   }
 
@@ -41,9 +52,20 @@ Room.prototype.direction = function(nextDirection) {
   }
 };
 
+Room.prototype.giveObject = function(user, object) {
+  console.log(object);
+    if (this.inventory.indexOf(object) > -1){
+      user.pickUp(object);
+      delete this.inventory[this.inventory.indexOf(object)];
+      console.log(this.inventory);
+      console.log('You picked up ' + object);
+    }
+};
+
 Room.prototype.print = function() {
   console.log('\n::::::::::::::::::::::::::');
   console.log(this.description);
+  console.log('objects: ', this.inventory.join(', '));
 };
 
 module.exports = Room;
