@@ -41,5 +41,15 @@ HanoiGame.prototype.print = function () {
 };
 
 HanoiGame.prototype.promptMove = function (callback) {
+  read('prompt', function (err, input) {
+    if (err) {
+      console.log('Error!', err);
+    } else {
+      callback(input);
+    }
+  })
+};
+
+HanoiGame.prototype.run = function () {
   // body...
 };
