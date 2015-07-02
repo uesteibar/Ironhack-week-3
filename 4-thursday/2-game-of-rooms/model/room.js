@@ -1,21 +1,23 @@
-
-var Room = function (description, exits) {
+var Room = function(description, hint, exits) {
   this.description = description;
+  this.hint = hint;
   this.exits = exits;
 };
 
-Room.prototype.checkInput = function (input) {
+Room.prototype.checkInput = function(input) {
   var nextDirection = this.checkDirection(input);
-  if (nextDirection >= 0) {
+  if (nextDirection >== 0) {
     return this.direction(nextDirection);
   }
+  console.log(this.hint);
+  return null;
 };
 
-Room.prototype.checkDirection = function (input) {
+Room.prototype.checkDirection = function(input) {
   return this.exits[input.toUpperCase()];
 };
 
-Room.prototype.direction = function (nextDirection) {
+Room.prototype.direction = function(nextDirection) {
   if (nextDirection > -1) {
     console.log('You are moving...');
     return nextDirection;
@@ -25,7 +27,7 @@ Room.prototype.direction = function (nextDirection) {
   }
 };
 
-Room.prototype.print = function () {
+Room.prototype.print = function() {
   console.log('\n::::::::::::::::::::::::::');
   console.log(this.description);
 };
