@@ -2,7 +2,11 @@
 
 var HanoiGame = function(inputProvider) {
   this.inputProvider = inputProvider;
-  this.stacks = [[], [], []];
+  this.stacks = [
+    [],
+    [],
+    []
+  ];
   [1, 5, 3, 4, 2].forEach(function(disc) {
     var stackIndex = Math.floor((Math.random() * 3));
     this.stacks[stackIndex].push(disc);
@@ -41,9 +45,6 @@ HanoiGame.prototype.move = function(startStackIndex, endStackIndex) {
 };
 
 HanoiGame.prototype.print = function() {
-  /*this.stacks.forEach(function (stack) {
-    console.log(stack.join(' '));
-  });*/
   var output = '';
   for (var i = 4; i >= 0; i--) {
     for (var j = 0; j < this.stacks.length; j++) {
