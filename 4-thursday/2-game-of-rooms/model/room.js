@@ -57,7 +57,6 @@ Room.prototype.giveObject = function(user, object) {
     if (this.inventory.indexOf(object) > -1){
       user.pickUp(object);
       delete this.inventory[this.inventory.indexOf(object)];
-      console.log(this.inventory);
       console.log('You picked up ' + object);
     }
 };

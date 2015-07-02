@@ -10,7 +10,7 @@ User.prototype.pickUp = function(object) {
 
   if (index === -1) {
     this.inventory.push(object);
-  } 
+  }
 };
 
 User.prototype.drop = function(object) {
@@ -19,7 +19,11 @@ User.prototype.drop = function(object) {
   if (index !== -1) {
     console.log("you dropped " + object);
     this.inventory.splice(index, 1);
-  } 
+  }
+};
+
+User.prototype.printInventory = function () {
+  console.log('You have: ', this.inventory.join(', '));
 };
 
 module.exports = User;
