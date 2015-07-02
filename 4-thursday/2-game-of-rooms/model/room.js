@@ -1,20 +1,34 @@
-var Room = function(description, hint, exits) {
-  this.description = description;
-  this.hint = hint;
-  this.exits = exits;
+
+var Room = function(roomConfig) {
+  this.description = roomConfig.description;
+  this.hint = roomConfig.hint;
+  this.exits = roomConfig.exits;
+  this.actions = roomConfig.actions;
 };
 
 Room.prototype.checkInput = function(input) {
   var nextDirection = this.checkDirection(input);
-  if (nextDirection >== 0) {
+  if (nextDirection) {
     return this.direction(nextDirection);
   }
-  console.log(this.hint);
+
+  var action = this.checkAction(input);
+  if (action) {
+    console.log(action);
+    return null;
+  }
+
+  console.log("I don't understand...");
+  console.log('Hint: ', this.hint);
   return null;
 };
 
 Room.prototype.checkDirection = function(input) {
   return this.exits[input.toUpperCase()];
+};
+
+Room.prototype.checkAction = function (input) {
+  return this.actions[input.toUpperCase()];
 };
 
 Room.prototype.direction = function(nextDirection) {
