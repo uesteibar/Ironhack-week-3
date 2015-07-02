@@ -29,8 +29,7 @@ function areOrderedVowels (characters) {
     if (vowelsIndexes.length === 0) {
       vowelsIndexes.push(vowels.indexOf(onlyVowels[i]));
     } else {
-      var firstItem = vowelsIndexes[0];
-      if (firstItem > vowels.indexOf(onlyVowels[i])) {
+      if (vowelsIndexes[vowelsIndexes.length - 1] > vowels.indexOf(onlyVowels[i])) {
         orderedWord = false;
         i = onlyVowels.length;
       } else {
@@ -42,4 +41,4 @@ function areOrderedVowels (characters) {
   return orderedWord;
 }
 
-console.log(orderedVowelWords("Hello this is an undisclosed unweird test"));
+console.log(orderedVowelWords("Hello this is an undisclosed unweird test anenona"));
