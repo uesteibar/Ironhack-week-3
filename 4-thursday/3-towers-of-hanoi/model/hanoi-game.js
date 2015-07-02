@@ -21,6 +21,7 @@ HanoiGame.prototype.isWon = function() {
 };
 
 HanoiGame.prototype.isValidMove = function(startStackIndex, endStackIndex) {
+  console.log(startStackIndex);
   if (this.stacks[startStackIndex][this.stacks[startStackIndex].length - 1] < this.stacks[endStackIndex][this.stacks[endStackIndex].length - 1] ||
     this.stacks[endStackIndex].length === 0) {
     return true;
@@ -66,12 +67,9 @@ HanoiGame.prototype.promptMove = function(callback) {
 
 HanoiGame.prototype.run = function() {
   this.print();
-  this.promptMove(function(input) {
-    var splittedInput = input.split(' ');
-    var startStackIndex = parseInt(splittedInput[0]) - 1;
-    var endStackIndex = parseInt(splittedInput[1]) - 1;
+  this.promptMove(function(stackIndexes) {
 
-    if (this.move(startStackIndex, endStackIndex)) {
+    if (this.move(stackIndexes[0], stackIndexes[1])) {
       if (this.isWon()) {
         console.log('YOU WON!');
       } else {
