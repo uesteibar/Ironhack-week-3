@@ -3,17 +3,18 @@
 var read = require('read');
 
 var HanoiGame = function() {
-  this.stacks = [];
-  [1,5,3,4,2].forEach(function (argument) {
-    // body...
-  })
+  this.stacks = [[], [], []];
+  [1,5,3,4,2].forEach(function (disc) {
+    var stackIndex = Math.floor((Math.random() * 3));
+    this.stacks[stackIndex].push(disc);
+  }.bind(this));
 };
 
 HanoiGame.prototype.isWon = function() {
   var stacksWithDiscs = this.stacks.filter(function(stack) {
-    return stack.lenght > 0;
+    return (stack.length > 0);
   });
-  if (stacksWithDiscs === 1) {
+  if (stacksWithDiscs.length === 1) {
     return true;
   } else {
     return false;
@@ -21,7 +22,8 @@ HanoiGame.prototype.isWon = function() {
 };
 
 HanoiGame.prototype.isValidMove = function (startStackIndex, endStackIndex) {
-  if (this.stacks[startStackIndex] < this.stacks[startStackIndex]) {
+  if (this.stacks[startStackIndex][this.stacks[startStackIndex].length - 1] < this.stacks[endStackIndex][this.stacks[endStackIndex].length - 1] ||
+  this.stacks[endStackIndex].length === 0) {
     return true;
   } else {
     return false;
@@ -30,9 +32,8 @@ HanoiGame.prototype.isValidMove = function (startStackIndex, endStackIndex) {
 
 HanoiGame.prototype.move = function (startStackIndex, endStackIndex) {
   if (this.isValidMove(startStackIndex, endStackIndex)) {
-    // move the things
-    this.stacks[endStackIndex].push = this.stacks[startStackIndex][this.stacks[startStackIndex].lenght - 1];
-    this.stacks.slice(startStackIndex, 1);
+    this.stacks[endStackIndex].push(this.stacks[startStackIndex][this.stacks[startStackIndex].length - 1]);
+    this.stacks[startStackIndex].pop();
     return true;
   } else {
     return false;
@@ -53,16 +54,17 @@ HanoiGame.prototype.promptMove = function (callback) {
     } else {
       callback(input);
     }
-  })
+  });
 };
 
 HanoiGame.prototype.run = function () {
+  this.print();
   this.promptMove(function (input) {
     var splittedInput = input.split(' ');
-    var startStackIndex = parseInt(splittedInput[0]);
-    var endStackIndex = parseInt(splittedInput[1]);
+    var startStackIndex = parseInt(splittedInput[0]) - 1;
+    var endStackIndex = parseInt(splittedInput[1]) - 1;
 
-    if this.move(startStackIndex, endStackIndex) {
+    if (this.move(startStackIndex, endStackIndex)) {
       if (this.isWon()){
         console.log('YOU WON!');
       } else {
@@ -72,5 +74,7 @@ HanoiGame.prototype.run = function () {
       console.log('You can not move like that.');
       this.run();
     }
-  })
+  }.bind(this));
 };
+
+module.exports = HanoiGame;
