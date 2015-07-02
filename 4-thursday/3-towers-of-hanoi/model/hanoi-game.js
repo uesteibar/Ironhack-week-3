@@ -1,8 +1,7 @@
 'use strict';
 
-var read = require('read');
-
-var HanoiGame = function() {
+var HanoiGame = function(inputProvider) {
+  this.inputProvider = inputProvider;
   this.stacks = [[], [], []];
   [1, 5, 3, 4, 2].forEach(function(disc) {
     var stackIndex = Math.floor((Math.random() * 3));
@@ -62,13 +61,7 @@ HanoiGame.prototype.print = function() {
 
 HanoiGame.prototype.promptMove = function(callback) {
   console.log("Type from which stack you want to move it and in which stack you want to put it (example: 1 2)");
-  read('prompt', function(err, input) {
-    if (err) {
-      console.log('Error!', err);
-    } else {
-      callback(input);
-    }
-  });
+  this.inputProvider.input(callback);
 };
 
 HanoiGame.prototype.run = function() {
