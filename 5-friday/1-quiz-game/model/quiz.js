@@ -17,8 +17,8 @@ Quiz.prototype.turn = function() {
   this.inputProvider.input(function(input) {
     if (input.toLowerCase() === 'save') {
       this.userSaver.save(this.user);
-    }
-    if (this.questions[this.user.currentQuestionIndex].isAnswerCorrect(input)) {
+      this.turn();
+    } else if (this.questions[this.user.currentQuestionIndex].isAnswerCorrect(input)) {
       this.addPoints();
       console.log('Correct!');
       if (this.isFinished()) {
