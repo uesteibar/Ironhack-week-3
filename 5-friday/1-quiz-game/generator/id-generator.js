@@ -5,9 +5,9 @@ var IdGenerator = function() {
 };
 
 IdGenerator.prototype.generateId = function() {
-  var id = this.getRandomNum(10);
+  var id = this.getRandomNum(2);
   while (this.isUsed(id)) {
-    var id = this.getRandomNum(10);
+    var id = this.getRandomNum(2);
   }
   this.usedIds.push(id);
   return id;
@@ -21,7 +21,7 @@ IdGenerator.prototype.isUsed = function(id) {
 };
 
 IdGenerator.prototype.getRandomNum = function(limit) {
-  return Math.floor(Math.random() * (limit + 1));
+  return Math.floor(Math.random() * (limit)) + 1;
 };
 
 module.exports = IdGenerator;
