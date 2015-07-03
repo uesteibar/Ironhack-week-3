@@ -1,10 +1,15 @@
 'use strict';
 
-var Quiz = function(questions, user, inputProvider, userSaver) {
+var Quiz = function(questions, user, inputProvider, userSaver, rankingLoader, rankingPrinter) {
   this.questions = questions;
   this.user = user;
+  if (this.user.currentQuestionIndex >= this.questions.length - 1) {
+    this.user.currentQuestionIndex = 0;
+  }
   this.inputProvider = inputProvider;
   this.userSaver = userSaver;
+  this.rankingLoader = rankingLoader;
+  this.rankingPrinter = rankingPrinter;
   this.makeRandomQuestionBonus();
 };
 
@@ -18,10 +23,16 @@ Quiz.prototype.turn = function() {
     if (input.toLowerCase() === 'save') {
       this.userSaver.save(this.user);
       this.turn();
+    } else if (input.toLowerCase() === 'ranking') {
+      this.rankingLoader.load(function(ranking) {
+        this.rankingPrinter.print(ranking);
+        this.turn();
+      }.bind(this));
     } else if (this.questions[this.user.currentQuestionIndex].isAnswerCorrect(input)) {
       this.addPoints();
       console.log('Correct!');
       if (this.isFinished()) {
+        this.userSaver.save(this.user);
         this.printFinish();
       } else {
         this.user.currentQuestionIndex++;

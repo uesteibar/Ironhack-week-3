@@ -7,7 +7,7 @@ var Question = function(description, answer, pointValue) {
 };
 
 Question.prototype.print = function () {
-  console.log(this.description);
+  console.log('\n\n' + this.description);
 };
 
 Question.prototype.isAnswerCorrect = function (input) {

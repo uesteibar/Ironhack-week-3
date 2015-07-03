@@ -6,6 +6,8 @@ var Quiz = require('./model/quiz');
 var Login = require('./handler/login');
 var FileUserLoader = require('./memory/file-user-loader');
 var FileUserSaver = require('./memory/file-user-saver');
+var RankingLoader = require('./memory/file-ranking-loader');
+var RankingPrinter = require('./handler/ranking-printer');
 
 var login = new Login(new PromptInputProvider(), new FileUserLoader);
 
@@ -18,7 +20,9 @@ login.initSesion(function(user) {
   var quiz = new Quiz(questions,
     user,
     new PromptInputProvider(),
-    new FileUserSaver()
+    new FileUserSaver(),
+    new RankingLoader(),
+    new RankingPrinter()
   );
   quiz.play();
 });
