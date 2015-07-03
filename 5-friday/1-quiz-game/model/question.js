@@ -1,9 +1,10 @@
 'use strict';
 
-var Question = function(description, answer, id) {
+var Question = function(id, description, answer, pointValue) {
+  this.id = id;
   this.description = description;
   this.answer = answer;
-  this.id = id;
+  this.pointValue = pointValue;
 };
 
 Question.prototype.print = function () {

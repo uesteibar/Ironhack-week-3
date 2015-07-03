@@ -7,8 +7,8 @@ var Quiz = require('./model/quiz');
 var idGenerator = new IdGenerator();
 
 var questions = [
-  new Question('Is this the real world?', 'yes', idGenerator.generateId()),
-  new Question('Are you sure?', 'no', idGenerator.generateId())
+  new Question(idGenerator.generateId(), 'Is this the real world?', 'yes', 5),
+  new Question(idGenerator.generateId(), 'Are you sure?', 'no', 8)
 ];
 
 var quiz = new Quiz(questions, new PromptInputProvider());
