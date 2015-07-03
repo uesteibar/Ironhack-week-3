@@ -1,0 +1,10 @@
+/* line 2, ../../sass/custom/sections.scss */
+.title {
+  font-weight: 700;
+}
+
+/* line 6, ../../sass/custom/sections.scss */
+.subtitle {
+  font-weight: 600;
+  color: #9a9a9a;
+}
