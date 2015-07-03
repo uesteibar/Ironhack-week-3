@@ -1,7 +1,6 @@
 'use strict';
 
-var Question = function(id, description, answer, pointValue) {
-  this.id = id;
+var Question = function(description, answer, pointValue) {
   this.description = description;
   this.answer = answer;
   this.pointValue = pointValue;
