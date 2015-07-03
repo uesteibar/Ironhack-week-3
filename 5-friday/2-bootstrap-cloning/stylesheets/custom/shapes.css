@@ -1,0 +1,6 @@
+/* line 1, ../../sass/custom/shapes.scss */
+.circle {
+  border: 0.6rem solid white;
+  border-radius: 50%;
+  padding: 2rem;
+}

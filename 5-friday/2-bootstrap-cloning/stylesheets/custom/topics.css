@@ -1,0 +1,19 @@
+/* line 2, ../../sass/custom/topics.scss */
+.topics {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #e63e3a;
+  color: #f1f1f1;
+}
+/* line 8, ../../sass/custom/topics.scss */
+.topics .topic {
+  margin: 1rem 0;
+}
+/* line 12, ../../sass/custom/topics.scss */
+.topics .glyphicon {
+  font-size: 2rem;
+}
+/* line 16, ../../sass/custom/topics.scss */
+.topics p {
+  margin: 0 1.4rem;
+}
