@@ -5,6 +5,7 @@ var Quiz = function(questions, inputProvider) {
   this.inputProvider = inputProvider;
   this.currentCuestionIndex = 0;
   this.totalPoints = 0;
+  this.makeRandomQuestionBonus();
 };
 
 Quiz.prototype.play = function() {
@@ -51,6 +52,13 @@ Quiz.prototype.substractPoints = function() {
 
 Quiz.prototype.addPoints = function() {
   this.totalPoints += this.questions[this.currentCuestionIndex].pointValue;
+};
+
+Quiz.prototype.makeRandomQuestionBonus = function () {
+  console.log((this.questions.length));
+  var randomIndex = Math.floor(Math.random() * (this.questions.length));
+  console.log(randomIndex);
+  this.questions[randomIndex].pointValue *= 2;
 };
 
 module.exports = Quiz;

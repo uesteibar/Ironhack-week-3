@@ -8,7 +8,6 @@ var Question = function(id, description, answer, pointValue) {
 };
 
 Question.prototype.print = function () {
-  console.log('\n::::::::::::::::::');
   console.log(this.description);
 };
 
